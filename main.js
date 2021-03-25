@@ -44,10 +44,14 @@ function validateCred(array) {
             acc += curr;
         }
         return acc;
-    }, 0) % 10;
+    }, 0) % 10 === 0;
 
 }
-
-
 console.log(validateCred(valid3));
 
+
+function findInvalidCards (nestedArray) {
+    return nestedArray.map(validateCred);
+}
+
+console.log(findInvalidCards(batch));
