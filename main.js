@@ -25,10 +25,29 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 // Add your functions below:
 
+function validateCred(array) {
+
+    if (array.length % 2 !== 0) {
+        array.unshift(0);
+    }
+
+    return array.reduce((acc, curr, index) => {
+
+        if (index === array.length - 1 || index % 2 !== 0) {
+            acc += curr;
+        }
+        else {
+            curr *= 2;
+            if (curr > 9) {
+                curr -= 9;
+            }
+            acc += curr;
+        }
+        return acc;
+    }, 0) % 10;
+
+}
 
 
-
-
-
-
+console.log(validateCred(valid3));
 
