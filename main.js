@@ -22,7 +22,6 @@ const mystery5 = [4, 9, 1, 3, 5, 4, 0, 4, 6, 3, 0, 7, 2, 5, 2, 3];
 // An array of all the arrays above
 const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, invalid3, invalid4, invalid5, mystery1, mystery2, mystery3, mystery4, mystery5]
 
-
 // Add your functions below:
 
 function validateCred(array) {
@@ -51,15 +50,10 @@ function validateCred(array) {
     }, 0) % 10 === 0;
 
 }
-console.log(validateCred(valid3));
-console.log(validateCred('123456789'));
 
 function findInvalidCards(nestedArray) {
     return nestedArray.map(validateCred);
 }
-
-console.log(findInvalidCards(batch));
-
 
 function invalidCardCompanies(invalidNums) {
 
@@ -77,9 +71,6 @@ function invalidCardCompanies(invalidNums) {
     }
 }
 
-console.log(invalidCardCompanies(invalid1));
-
-
 function companyChecker(array) {
 
     array = array.map(element => {
@@ -95,5 +86,3 @@ function companyChecker(array) {
     const dupInvalidRemoved = [...new Set(invalidOnly)];
     return dupInvalidRemoved;
 }
-
-console.log(companyChecker(batch));
