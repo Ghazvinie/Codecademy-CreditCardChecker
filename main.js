@@ -91,8 +91,8 @@ function companyChecker(array) {
         }
     });
 
-    let invalidOnly = array.filter(element => element.match(/invalid/gi));
-    let dupInvalidRemoved = [...new Set(invalidOnly)];
+    const invalidOnly = array.filter(element => element.match(/invalid/gi));
+    const dupInvalidRemoved = [...new Set(invalidOnly)];
     return dupInvalidRemoved;
 }
 
