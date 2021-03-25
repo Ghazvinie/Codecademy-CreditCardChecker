@@ -27,6 +27,10 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 function validateCred(array) {
 
+    if (typeof array === 'string'){
+        array = array.split('');
+    }
+
     if (array.length % 2 !== 0) {
         array.unshift(0);
     }
@@ -48,7 +52,7 @@ function validateCred(array) {
 
 }
 console.log(validateCred(valid3));
-
+console.log(validateCred('123456789'));
 
 function findInvalidCards(nestedArray) {
     return nestedArray.map(validateCred);
